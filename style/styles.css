@@ -1,8 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Roboto&display=swap');
 
-/*font-family: 'Poppins', sans-serif;*/
-/*font-family: 'Roboto', sans-serif;*/
-
 * {
     margin: 0;
     padding: 0;
@@ -13,9 +10,6 @@
 html, body {
     font-family: 'Poppins', sans-serif;
     text-align: center;
-}
-
-body {
     height: 100%;
 }
 
@@ -26,15 +20,6 @@ button {
 :root {
     --container-max-width: 1920px;
 }
-
-/*.bg-container {*/
-/*    width: 100%;*/
-/*    max-width: var(--container-max-width);*/
-/*    margin: 0 auto;*/
-/*    background-image: url("../img/background-left.png"), url("../img/background-right.png");*/
-/*    background-repeat: repeat-y, repeat-y;*/
-/*    background-position: left, right;*/
-/*}*/
 
 .container {
     width: 100%;
@@ -80,7 +65,6 @@ button {
     font-weight: 700;
     margin-bottom: 8px;
 }
-/*color: #E5E5E5;*/
 
 .main-text, .check-text, .go-btn-text  {
     font-size: 18px;
@@ -95,6 +79,17 @@ button {
 
 .main-text {
     max-width: 23%;
+}
+
+.time-count-content  {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 72px;
+    line-height: 1em;
+    font-style: normal;
+    font-weight: 600;
+    color: #162C4E;
 }
 
 .check-text {
