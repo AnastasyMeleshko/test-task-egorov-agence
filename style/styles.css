@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Roboto&display=swap');
 
-* {
+*, *::before, *::after {
     margin: 0;
     padding: 0;
     border: 0;
@@ -66,7 +66,8 @@ button {
 
 .main-title {
     text-transform: uppercase;
-    color: #162C4E;
+    color: rgb(19, 89, 120);
+    opacity: 0.5;
     font-size: 72px;
     line-height: 1.04em;
     font-style: normal;
@@ -151,6 +152,90 @@ button {
     margin-right: 20px;
 }
 
+.modal {
+    width: 320px;
+    max-width: 80%;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    transition: 200ms ease-in-out;
+    border: 1px solid #EEF3F6;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    z-index: 20;
+    background-color: #FFFFFF;
+}
+
+.modal.active{
+    transform: translate(-50%, -50%) scale(1);
+}
+
+#overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(22, 44, 78, 0.6);
+    opacity: 0;
+    pointer-events: none;
+}
+
+#overlay.active {
+    opacity: 1;
+    pointer-events: all;
+}
+
+.cross-btn {
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 16px 24px 0 0;
+}
+
+.cross-btn:hover {
+    fill: #1D4169;
+}
+
+.modal-header {
+    font-size: 36px;
+    line-height: 1em;
+    font-style: normal;
+    font-weight: 700;
+    color: #162C4E;
+    margin: 98px 0 30px 0;
+}
+
+.modal-text {
+    width:60%;
+    font-size: 16px;
+    line-height: 1.5em;
+    font-style: normal;
+    font-weight: 400;
+    color: rgba(0, 0, 0, 0.8);
+    text-align: center;
+    margin: 0 auto 30px;
+}
+
+.modal-btn {
+    width: 200px;
+    border-radius: 40px;
+    background-color: #1D4169;
+    color: #FFFFFF;
+    font-size: 18px;
+    line-height: 1.5em;
+    font-style: normal;
+    font-weight: 400;
+    padding: 16px 74px;
+    margin-bottom: 70px;
+}
+
 .footer {
     position: absolute;
     left: 0;
@@ -173,9 +258,10 @@ button {
 
 .form-wrapper::after {
     content: "";
-    position: fixed;
+    position: absolute;
     top: 0;
     left: 0;
+    z-index: 22;
     width: 100vw;
     height: 100vh;
     background: rgba(22, 44, 78, 0.6) url("../img/loading.gif") center / 100px no-repeat;
@@ -184,10 +270,23 @@ button {
     transition: 0.3s all;
 }
 
+
 .form-wrapper.sending::after {
     opacity: 1;
     visibility: visible;
+    z-index: 30;
 }
+
+/*.search-active {*/
+/*    position: absolute;*/
+/*    top: 0;*/
+/*    left: 0;*/
+/*    z-index: 22;*/
+/*    width: 100vw;*/
+/*    height: 100vh;*/
+/*    background: rgba(22, 44, 78, 0.6) url("../img/loading.gif") center / 100px no-repeat;*/
+/*    opacity: 0;*/
+/*}*/
 
 .form-input {
     display: inline-flex;
@@ -228,7 +327,7 @@ button {
 
 .form-input.error {
     box-shadow: 0 0 40px rgba(192, 15, 15, 0.75);
-    background-color: rgba(248, 214, 214, 0.93);
+    background-color: rgb(241, 150, 159);
 }
 
 .form-input.good {
@@ -236,36 +335,3 @@ button {
     background-color: #a4d292;
 }
 
-/*input.mail {*/
-/*    -webkit-appearance: none;*/
-/*    width: 100%;*/
-/*    border: 1px solid #333;*/
-/*}*/
-
-/*!* Стилизация не валидных полей *!*/
-/*input.invalid{*/
-/*    border-color: #900;*/
-/*    background-color: #FDD;*/
-/*}*/
-
-/*input:focus.invalid {*/
-/*    outline: none;*/
-/*}*/
-
-/*!* Стилизация сообщений об ошибках *!*/
-/*.error {*/
-/*    width  : 100%;*/
-/*    padding: 0;*/
-/*    font-size: 80%;*/
-/*    color: white;*/
-/*    background-color: #900;*/
-/*    border-radius: 0 0 5px 5px;*/
-/*    position: absolute;*/
-/*    top: 0;*/
-/*    left: 0;*/
-
-/*}*/
-
-/*.error.active {*/
-/*    padding: 0.3em;*/
-/*}*/
