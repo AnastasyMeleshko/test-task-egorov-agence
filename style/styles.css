@@ -143,6 +143,7 @@ button {
     background-color: #1D4169;
     border-radius: 40px;
     padding: 17px 0;
+    transition: 0.3s all;
 }
 
 .go-btn-text {
@@ -170,13 +171,37 @@ button {
     position: relative;
 }
 
+.form-wrapper::after {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(22, 44, 78, 0.6) url("../img/loading.gif") center / 100px no-repeat;
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.3s all;
+}
+
+.form-wrapper.sending::after {
+    opacity: 1;
+    visibility: visible;
+}
+
 .form-input {
     display: inline-flex;
     width: 440px;
-    padding: 21px 60px 21px 27px;
+    padding: 24px 60px 21px 27px;
     border-radius: 40px;
     box-shadow: 0 0 50px rgba(0, 0, 0, 0.4);
     border: 1px solid rgba(0, 0, 0, 0.8);
+    outline: none;
+    transition: 0.3s all;
+}
+
+.form-input:focus, .go-btn:hover {
+    box-shadow: 0 0 40px rgba(28, 120, 208, 0.4);
 }
 
 .form-input::placeholder {
@@ -200,3 +225,47 @@ button {
     top: 8px;
     right: 8px;
 }
+
+.form-input.error {
+    box-shadow: 0 0 40px rgba(192, 15, 15, 0.75);
+    background-color: rgba(248, 214, 214, 0.93);
+}
+
+.form-input.good {
+    box-shadow: 0 0 40px rgba(22, 103, 13, 0.75);
+    background-color: #a4d292;
+}
+
+/*input.mail {*/
+/*    -webkit-appearance: none;*/
+/*    width: 100%;*/
+/*    border: 1px solid #333;*/
+/*}*/
+
+/*!* Стилизация не валидных полей *!*/
+/*input.invalid{*/
+/*    border-color: #900;*/
+/*    background-color: #FDD;*/
+/*}*/
+
+/*input:focus.invalid {*/
+/*    outline: none;*/
+/*}*/
+
+/*!* Стилизация сообщений об ошибках *!*/
+/*.error {*/
+/*    width  : 100%;*/
+/*    padding: 0;*/
+/*    font-size: 80%;*/
+/*    color: white;*/
+/*    background-color: #900;*/
+/*    border-radius: 0 0 5px 5px;*/
+/*    position: absolute;*/
+/*    top: 0;*/
+/*    left: 0;*/
+
+/*}*/
+
+/*.error.active {*/
+/*    padding: 0.3em;*/
+/*}*/
