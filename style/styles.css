@@ -11,6 +11,13 @@ html, body {
     font-family: 'Poppins', sans-serif;
     text-align: center;
     height: 100%;
+    min-height: 100vh;
+    overflow: hidden;
+}
+
+.main-wrapper {
+    position: relative;
+    min-height: 100%;
 }
 
 button {
@@ -18,12 +25,11 @@ button {
 }
 
 :root {
-    --container-max-width: 1920px;
+    /*--container-max-width: 1920px;*/
 }
 
 .container {
     width: 100%;
-    max-width: var(--container-max-width);
     margin: 0 auto;
     background-color: #FFFFFF;
 }
@@ -38,14 +44,16 @@ button {
 
 .bg-left {
     position: absolute;
-    top: 0;
-    left: 0;
+    top: -152%;
+    left: -18%;
+    max-width: 100%;
 }
 
 .bg-right {
     position: absolute;
-    top: 0;
-    right: 0;
+    top: -266%;
+    right: -15%;
+    max-width: 100%;
 }
 
 .main-info {
@@ -53,7 +61,7 @@ button {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin: 32px 0;
+    padding: 32px 0;
 }
 
 .main-title {
@@ -90,6 +98,32 @@ button {
     font-style: normal;
     font-weight: 600;
     color: #162C4E;
+    margin: 72px 0;
+}
+
+.time-count-separator {
+    align-self: flex-start;
+}
+
+.time-count-text-bg {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 132px;
+    height: 54px;
+    background-image: url("../img/bg-red-element.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.time-count-text {
+    width: 100%;
+    font-size: 16px;
+    line-height: 1em;
+    font-style: normal;
+    font-weight: 400;
+    color: #FFFFFF;
 }
 
 .check-text {
@@ -97,7 +131,7 @@ button {
 }
 
 .check-button {
-    margin: 72px 0 75px 0;
+    margin-bottom: 75px;
 }
 
 .go-btn {
@@ -114,6 +148,13 @@ button {
 .go-btn-text {
     color: #FFFFFF;
     margin-right: 20px;
+}
+
+.footer {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
 }
 
 .footer-bg {

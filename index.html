@@ -7,6 +7,7 @@
     <title>Test-task</title>
 </head>
 <body>
+  <div class="main-wrapper">
       <header>
           <div class="container header-container">
               <div class="logo">
@@ -50,22 +51,30 @@
               <div class="time-count-content">
                   <div class="time-count-item time-count-days">
                       <div class="time-count-val">00</div>
-                      <span class="time-count-text">days</span>
+                      <div class="time-count-text-bg">
+                          <p class="time-count-text">days</p>
+                      </div>
                   </div>
                   <div class="time-count-separator">:</div>
                   <div class="time-count-item time-count-hours">
                       <div class="time-count-val">00</div>
-                      <span class="time-count-text">hours</span>
+                      <div class="time-count-text-bg">
+                        <p class="time-count-text">hours</p>
+                      </div>
                   </div>
                   <div class="time-count-separator">:</div>
                   <div class="time-count-item time-count-minutes">
                       <div class="time-count-val">00</div>
-                      <span class="time-count-text">minutes</span>
+                      <div class="time-count-text-bg">
+                          <p class="time-count-text">minutes</p>
+                      </div>
                   </div>
                   <div class="time-count-separator">:</div>
                   <div class="time-count-item time-count-seconds">
                       <div class="time-count-val">00</div>
-                      <span class="time-count-text">seconds</span>
+                      <div class="time-count-text-bg">
+                          <p class="time-count-text">seconds</p>
+                      </div>
                   </div>
               </div>
               <div class="check-button">
@@ -80,7 +89,7 @@
               </div>
           </div>
       </main>
-    <footer>
+    <footer class="footer">
         <div class="container footer-bg">
             <form class="footer-form" action="#">
                 <div class="form-wrapper">
@@ -95,6 +104,7 @@
             </form>
         </div>
     </footer>
-<script src="./js/index.js"></script>
+  </div>
+<script type="module" src="./js/index.js"></script>
 </body>
 </html>
