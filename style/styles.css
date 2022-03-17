@@ -22,9 +22,7 @@ body {
     min-height: 100%;
     grid-template-rows: auto 1fr auto;
     margin: 0;
-    /*height: 100%;*/
     display: grid;
-    /*position: relative;*/
 }
 
 html, body {
@@ -35,6 +33,13 @@ html, body {
 
 button {
     cursor: pointer;
+}
+
+.main-wrapper {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .container {
@@ -160,7 +165,8 @@ button {
 }
 
 .check-button {
-    margin: 0 auto 75px;
+    margin: 0 auto;
+    padding-bottom: 75px;
 }
 
 .go-btn {
@@ -265,9 +271,10 @@ button {
 }
 
 .footer {
-    margin-top: auto;
-    /*position: absolute;*/
-    /*bottom: 0;*/
+    /*margin-top: auto;*/
+    position: relative;
+    bottom: 0;
+    left: 0;
     width: 100%;
 }
 
@@ -285,19 +292,19 @@ button {
     position: relative;
 }
 
-.form-wrapper::after {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: 22;
-    width: 100vw;
-    height: 100vh;
-    background: rgba(22, 44, 78, 0.6) url("../img/loading.gif") center / 100px no-repeat;
-    opacity: 0;
-    visibility: hidden;
-    transition: 0.3s all;
-}
+/*.form-wrapper::after {*/
+/*    content: "";*/
+/*    position: absolute;*/
+/*    top: 0;*/
+/*    left: 0;*/
+/*    z-index: 22;*/
+/*    width: 100vw;*/
+/*    height: 100vh;*/
+/*    background: rgba(22, 44, 78, 0.6) url("../img/loading.gif") center / 100px no-repeat;*/
+/*    opacity: 0;*/
+/*    visibility: hidden;*/
+/*    transition: 0.3s all;*/
+/*}*/
 
 
 .form-wrapper.sending::after {
@@ -416,7 +423,7 @@ button {
     }
 
     .check-button {
-        margin: 0 auto 86px;
+        padding-bottom: 86px;
     }
 
     .footer-form {
@@ -479,7 +486,7 @@ button {
     }
 
     .check-button {
-        margin: 0 auto 86px;
+        padding-bottom: 86px;
     }
 
     .footer-form {
@@ -541,7 +548,7 @@ button {
     }
 
     .check-button {
-        margin: 0 auto 169px;
+        padding-bottom: 169px;
     }
 
     .footer-form {
@@ -602,7 +609,7 @@ button {
     }
 
     .check-button {
-        margin: 0 auto 75px;
+        padding-bottom: 75px;
     }
 
     .footer-form {
