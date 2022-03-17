@@ -22,7 +22,7 @@ function showTimer() {
 
         const screenWidth = innerWidth;
 
-        if (screenWidth > 780) {
+        if (screenWidth > 1210) {
             if ((days< 10) && (days !== 1)) {
                 daysVal.textContent = `0${days}`;
                 daysText.textContent = `days`;
