@@ -20,49 +20,97 @@ function showTimer() {
         let minutes = Math.floor(leftUntil / 1000 / 60) % 60;
         let seconds = Math.floor(leftUntil / 1000) % 60;
 
+        const screenWidth = innerWidth;
 
-        if ((days< 10) && (days !== 1)) {
-            daysVal.textContent = `0${days}`;
-            daysText.textContent = `days`;
-        } else if (days === 1) {
-            daysVal.textContent = `0${days}`;
-            daysText.textContent = `day`;
-        } else {
-            daysVal.textContent = `${days}`;
-            daysText.textContent = `days`;
-        }
+        if (screenWidth > 780) {
+            if ((days< 10) && (days !== 1)) {
+                daysVal.textContent = `0${days}`;
+                daysText.textContent = `days`;
+            } else if (days === 1) {
+                daysVal.textContent = `0${days}`;
+                daysText.textContent = `day`;
+            } else {
+                daysVal.textContent = `${days}`;
+                daysText.textContent = `days`;
+            }
 
-        if ((hours< 10) && (hours !== 1)) {
-            hoursVal.textContent = `0${hours}`;
-            hoursText.textContent = `hours`;
-        } else if (hours === 1) {
-            hoursVal.textContent = `0${hours}`;
-            hoursText.textContent = `hour`;
-        } else {
-            hoursVal.textContent = `${hours}`;
-            hoursText.textContent = `hours`;
-        }
+            if ((hours< 10) && (hours !== 1)) {
+                hoursVal.textContent = `0${hours}`;
+                hoursText.textContent = `hours`;
+            } else if (hours === 1) {
+                hoursVal.textContent = `0${hours}`;
+                hoursText.textContent = `hour`;
+            } else {
+                hoursVal.textContent = `${hours}`;
+                hoursText.textContent = `hours`;
+            }
 
-        if ((minutes < 10) && (minutes !== 1)) {
-            minutesVal.textContent = `0${minutes}`;
-            minutesText.textContent = `minutes`;
-        } else if (minutes === 1) {
-            minutesVal.textContent = `0${minutes}`;
-            minutesText.textContent = `minute`;
-        } else {
-            minutesVal.textContent = `${minutes}`;
-            minutesText.textContent = `minutes`;
-        }
+            if ((minutes < 10) && (minutes !== 1)) {
+                minutesVal.textContent = `0${minutes}`;
+                minutesText.textContent = `minutes`;
+            } else if (minutes === 1) {
+                minutesVal.textContent = `0${minutes}`;
+                minutesText.textContent = `minute`;
+            } else {
+                minutesVal.textContent = `${minutes}`;
+                minutesText.textContent = `minutes`;
+            }
 
-        if ((seconds < 10) && (seconds  !== 1)) {
-            secondsVal.textContent = `0${seconds}`;
-            secondsText.textContent = `seconds`;
-        } else if (seconds === 1) {
-            secondsVal.textContent = `0${seconds}`;
-            secondsText.textContent = `second`;
+            if ((seconds < 10) && (seconds  !== 1)) {
+                secondsVal.textContent = `0${seconds}`;
+                secondsText.textContent = `seconds`;
+            } else if (seconds === 1) {
+                secondsVal.textContent = `0${seconds}`;
+                secondsText.textContent = `second`;
+            } else {
+                secondsVal.textContent = `${seconds}`;
+                secondsText.textContent = `seconds`;
+            }
         } else {
-            secondsVal.textContent = `${seconds}`;
-            secondsText.textContent = `seconds`;
+            if ((days< 10) && (days !== 1)) {
+                daysVal.textContent = `0${days}`;
+                daysText.textContent = `DD`;
+            } else if (days === 1) {
+                daysVal.textContent = `0${days}`;
+                daysText.textContent = `DD`;
+            } else {
+                daysVal.textContent = `${days}`;
+                daysText.textContent = `DD`;
+            }
+
+            if ((hours< 10) && (hours !== 1)) {
+                hoursVal.textContent = `0${hours}`;
+                hoursText.textContent = `HH`;
+            } else if (hours === 1) {
+                hoursVal.textContent = `0${hours}`;
+                hoursText.textContent = `HH`;
+            } else {
+                hoursVal.textContent = `${hours}`;
+                hoursText.textContent = `HH`;
+            }
+
+            if ((minutes < 10) && (minutes !== 1)) {
+                minutesVal.textContent = `0${minutes}`;
+                minutesText.textContent = `MM`;
+            } else if (minutes === 1) {
+                minutesVal.textContent = `0${minutes}`;
+                minutesText.textContent = `MM`;
+            } else {
+                minutesVal.textContent = `${minutes}`;
+                minutesText.textContent = `MM`;
+            }
+
+            if ((seconds < 10) && (seconds  !== 1)) {
+                secondsVal.textContent = `0${seconds}`;
+                secondsText.textContent = `SS`;
+            } else if (seconds === 1) {
+                secondsVal.textContent = `0${seconds}`;
+                secondsText.textContent = `SS`;
+            } else {
+                secondsVal.textContent = `${seconds}`;
+                secondsText.textContent = `SS`;
+            }
+
         }
 
     };

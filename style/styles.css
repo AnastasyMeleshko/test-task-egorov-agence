@@ -137,7 +137,7 @@ button {
     /*width: calc(64px + (132 - 64) * ((100vw - 330px) / (1920 - 330)));*/
     height: 54px;
     background-image: url("../img/bg-red-element.png");
-    background-size: cover;
+    background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
 }
@@ -386,7 +386,7 @@ button {
 
     .time-count-text-bg {
         width: 64px;
-        height: 64px;
+        height: 40px;
     }
 
 
@@ -419,7 +419,7 @@ button {
 
     .time-count-text-bg {
         width: 64px;
-        height: 64px;
+        height: 40px;
     }
 
 }
@@ -452,7 +452,7 @@ button {
 
     .time-count-text-bg {
         width: 64px;
-        height: 64px;
+        height: 40px;
     }
 
 }
