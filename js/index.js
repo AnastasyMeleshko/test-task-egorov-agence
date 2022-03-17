@@ -1,26 +1,16 @@
 import { showTimer } from "./showTimer.js";
+import {changeModalMessage} from "./modal.js";
+import { emailTest } from "./emailTest.js";
+export let informMessage;
 
 document.addEventListener('DOMContentLoaded', showTimer);
 document.addEventListener('DOMContentLoaded', formValidation);
-
-// function insertGifForSearch() {
-//     let search = document.createElement("div");
-//     search.classList.add("search-active");
-//     return search;
-// }
 
 function formValidation() {
     const form  = document.querySelector(".footer-form");
     const formWrap = document.querySelector(".form-wrapper");
     const input = document.querySelector("#mail");
     const modal = document.getElementById("modal");
-    // let modalForSearch =  modal.cloneNode(true);
-    // modalForSearch.innerHTML = "";
-    // modalForSearch.classList.add("search-active");
-    // console.log(modalForSearch)
-    let informMessage;
-
-    // let newSearch = insertGifForSearch();
 
     form.addEventListener("submit", formSend);
 
@@ -39,46 +29,52 @@ function formValidation() {
                 method : "POST",
                 body : formData
             });
-            // document.querySelector(".container").append(modalForSearch);
             if (response.ok) {
-
-                // modal.innerHTML = "";
-                // modal.append(newSearch);
                 let result = await response.json();
                 setTimeout(() => {
-                    // modalForSearch.style.opacity = "1";
-                        alert(result.message);
-                        informMessage = "result.message";
-                    }, 3000);
+                    informMessage = "Success";
+                    changeModalMessage(modal);
+                    }, 700);
                 form.reset();
-                setTimeout(() => { formWrap.classList.remove("sending"); }, 3000);
+                setTimeout(() => { formWrap.classList.remove("sending"); }, 400);
                 input.classList.remove("good");
             } else {
-                // modal.innerHTML = "";
-                // modal.append(newSearch);
-                // modalForSearch.style.opacity = "1";
+
+                if (!emailTest(input)) {
+                    informMessage = "Bad";
+                    changeModalMessage(modal);
+                    form.reset();}
+
                 setTimeout( () => {
                     formWrap.classList.remove("sending");
                     input.classList.remove("good");
-                }, 2500);
-                setTimeout(() => {
+                }, 300);
                     response.json().then(error => {
                         const e = new Error('Ooops...Something went wrong')
                         e.data = error
                         throw error
                     })
-                    // modal.innerHTML = "";
-                    // modal.append(newSearch);
-                    alert("Ooops...Something went wrong");
-                    informMessage = "Ooops...Something went wrong";
-                    }, 3000);
+
+                    if (!emailTest(input)) {
+                        informMessage = "Bad";
+                        changeModalMessage(modal);
+                    } else {
+                        informMessage = "Mistake";
+                    }
+                    changeModalMessage(modal);
 
         }} else {
-            setTimeout(() => {
-                alert("Please enter an e-mail address!");
-                informMessage = "Please enter your e-mail address!";
-                }, 300);
+
+            if (!emailTest(input)) {
+                informMessage = "Bad";
+                changeModalMessage(modal);
+            } else {
+                informMessage = "Empty";
+                changeModalMessage(modal);
+            }
+
             formAddError(input);
+            form.reset();
         }
 
         function formValidate(form) {
@@ -87,6 +83,7 @@ function formValidation() {
             formRemoveError(input);
 
             if (!emailTest(input)) {
+                informMessage = "Bad";
                 formAddError(input);
                 error++;
             } else if (input.value === "") {
@@ -95,14 +92,6 @@ function formValidation() {
             } else if (input.value.length < input.minLength) {
                 formAddError(input);
                 error++;
-            }
-
-            function emailTest(input) {
-                if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(input.value))
-                {
-                    return (true);
-                }
-                return (false);
             }
             return error;
         }
@@ -122,4 +111,5 @@ function formValidation() {
 let currentUrl = window.location.href;
 let logoLink = document.querySelector(".logo-link");
 logoLink.setAttribute("href", `${currentUrl}`);
+
 
